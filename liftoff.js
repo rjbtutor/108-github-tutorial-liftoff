@@ -1,17 +1,15 @@
-// Countdown program (experimental version)
-// Adds a timed countdown effect
+// Countdown program (async attempt)
+// Tries to use async/await with setInterval — but doesn't behave as expected
 
-function countdown(start = 10, delay = 500) {
+async function countdown(start = 5, delay = 500) {
   console.log("Starting countdown...");
 
-  let i = start;
-  let timer = setInterval(() => {
+  for (let i = start; i >= 1; i--) {
     console.log(i);
-    if (i-- <= 1) {
-      clearInterval(timer);
-      console.log("🚀 Liftoff!");
-    }
-  }, delay);
+    await setInterval(() => {}, delay); // ❌ setInterval doesn't return a Promise!
+  }
+
+  console.log("🚀 Liftoff!");
 }
 
-countdown(10, 300);
+countdown();
