@@ -1,12 +1,17 @@
-// Countdown program (final version)
-// Counts down smoothly with a delay
+// Countdown program (experimental version)
+// Adds a timed countdown effect
 
-function countdown(start = 10) {
+function countdown(start = 10, delay = 500) {
   console.log("Starting countdown...");
-  for (let i = start; i >= 1; i--) {
+
+  let i = start;
+  let timer = setInterval(() => {
     console.log(i);
-  }
-  console.log("🚀 Liftoff!");
+    if (i-- <= 1) {
+      clearInterval(timer);
+      console.log("🚀 Liftoff!");
+    }
+  }, delay);
 }
 
-countdown();
+countdown(10, 300);
