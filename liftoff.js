@@ -1,8 +1,7 @@
-// Countdown program (buggy version)
+// Countdown program (bug fixed)
 console.log("Starting countdown...");
 
-for (let i = 1; i <= 10; i++) {
-  // BUG: counts up, not down!
+for (let i = 10; i >= 1; i--) {
   console.log(i);
 }
 
