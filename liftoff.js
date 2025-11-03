@@ -1,8 +1,12 @@
-// Countdown program (bug fixed)
-console.log("Starting countdown...");
+// Countdown program (final version)
+// Counts down smoothly with a delay
 
-for (let i = 10; i >= 1; i--) {
-  console.log(i);
+function countdown(start = 10) {
+  console.log("Starting countdown...");
+  for (let i = start; i >= 1; i--) {
+    console.log(i);
+  }
+  console.log("🚀 Liftoff!");
 }
 
-console.log("Liftoff!");
+countdown();
